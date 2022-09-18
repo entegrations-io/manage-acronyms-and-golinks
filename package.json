@@ -1,0 +1,20 @@
+{
+  "name": "manage-acronyms-and-golinks",
+  "version": "1.0.0",
+  "description": "manage-acronyms-and-golinks originally developed by entegrations.io, INC",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "keywords": [],
+  "author": "entegrations.io, INC",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

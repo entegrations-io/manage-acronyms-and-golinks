@@ -1,0 +1,23 @@
+<%- include("../header") -%>
+
+<h5>Delete the Acronym?</h5>
+<% if (error) { %>
+  <p class="alert alert-danger"><%= error %></p>
+<% } %>
+
+<form action="/acronyms/delete/<%= model.id %>" method="post">
+  <div class="form-horizontal">
+
+    <%- include("snippetDisplay") -%>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2"></label>
+      <div class="col-sm-10">
+        <input type="submit" value="Delete" class="btn btn-sm btn-danger" />
+        <a class="btn btn-sm btn-dark cancel" href="/acronyms">Cancel</a>
+      </div>
+    </div>
+  </div>
+</form>
+
+<%- include("../footer") -%>

@@ -1,0 +1,25 @@
+<%- include("../header") -%>
+
+<h5>Edit the Acronym</h5>
+<% if (error) { %>
+  <p class="alert alert-danger"><%= error %></p>
+<% } %>
+
+<form action="/acronyms/edit/<%= model.id %>" method="post">
+
+  <div class="form-horizontal">
+
+    <%- include("snippetEditor") -%>
+
+    <div class="form-group row">
+      <label class="col-form-label col-sm-2"></label>
+      <div class="col-sm-10">
+        <input type="submit" value="Save" class="btn btn-sm btn-primary" />
+        <a class="btn btn-sm btn-dark cancel" href="/acronyms">Cancel</a>
+      </div>
+    </div>
+
+  </div>
+</form>
+
+<%- include("../footer") -%>

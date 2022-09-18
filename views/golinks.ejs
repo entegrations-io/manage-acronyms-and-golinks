@@ -1,0 +1,46 @@
+<%- include("header") -%>
+
+<h5>GoLinks (<%= model.length %>)</h5>
+
+<% if (error) { %>
+  <p class="alert alert-danger"><%= error %></p>
+<% } %>
+  
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Link</th>
+        <th class="d-print-none">
+          <div class="container-xs text-left">
+            <div class="row">
+              <div class="col">
+                <a class="btn btn-sm btn-info" href="/golinks/create">Create</a>&nbsp;
+              </div>
+              <div class="col text-left">
+                <input class="form-control me-2" id="searchCriteriaField" type="search" size=1 placeholder="Search GoLinks" aria-label="Search" 
+                      title="Search the below GoLink records...">
+              </div>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const golink of model) { %>
+        <tr class="oneRow">
+          <td><%= golink.name %></td>
+          <td><%= golink.link %></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-primary" href="/golinks/edit/<%= golink.id %>">Edit</a>
+            <a class="btn btn-sm btn-danger" href="/golinks/delete/<%= golink.id %>">Delete</a>
+            <a class="btn btn-sm btn-secondary" href="/golinks/go/<%= golink.name %>">Go</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("footer") -%>

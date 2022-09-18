@@ -1,0 +1,11 @@
+.git*
+bin
+lib*
+include
+Dockerfile
+LICENSE.md
+README.md
+.dockerignore
+.gitignore
+node_modules/
+db_data/acronymsANDgolinks.db

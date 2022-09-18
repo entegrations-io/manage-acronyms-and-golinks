@@ -1,0 +1,44 @@
+<%- include("header") -%>
+
+<h5>Acronyms (<%= model.length %>)</h5>
+<% if (error) { %>
+  <p class="alert alert-danger"><%= error %></p>
+<% } %>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th class="d-print-none">
+          <div class="container-xs text-left">
+            <div class="row">
+              <div class="col">
+                <a class="btn btn-sm btn-info" href="/acronyms/create">Create</a>
+              </div>
+              <div class="col text-left">
+                <input class="form-control me-2" id="searchCriteriaField" type="search" size=1 placeholder="Search Acronyms" aria-label="Search" 
+              title="Search the below Acronym records...">
+              </div>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const acryonym of model) { %>
+        <tr class="oneRow">
+          <td><%= acryonym.name %></td>
+          <td><%= acryonym.description %></td>
+          <td class="d-print-none">
+            <a class="btn btn-sm btn-primary" href="/acronyms/edit/<%= acryonym.id %>">Edit</a>
+            <a class="btn btn-sm btn-danger" href="/acronyms/delete/<%= acryonym.id %>">Delete</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("footer") -%>
